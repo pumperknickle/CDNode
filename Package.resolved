@@ -29,6 +29,15 @@
         }
       },
       {
+        "package": "CryptoStarterPack",
+        "repositoryURL": "https://github.com/pumperknickle/CryptoStarterPack.git",
+        "state": {
+          "branch": null,
+          "revision": "04adb11364f51df42ba6c73f4ee2b251bbc4ffb5",
+          "version": "1.0.2"
+        }
+      },
+      {
         "package": "DatabaseKit",
         "repositoryURL": "https://github.com/vapor/database-kit.git",
         "state": {
@@ -71,6 +80,33 @@
           "branch": null,
           "revision": "bd7736c5f28e48ed8b683dcc9df3dcd346064c2b",
           "version": "3.0.3"
+        }
+      },
+      {
+        "package": "Nimble",
+        "repositoryURL": "https://github.com/Quick/Nimble.git",
+        "state": {
+          "branch": null,
+          "revision": "f8657642dfdec9973efc79cc68bcef43a653a2bc",
+          "version": "8.0.2"
+        }
+      },
+      {
+        "package": "Quick",
+        "repositoryURL": "https://github.com/Quick/Quick.git",
+        "state": {
+          "branch": null,
+          "revision": "94df9b449508344667e5afc7e80f8bcbff1e4c37",
+          "version": "2.1.0"
+        }
+      },
+      {
+        "package": "Redis",
+        "repositoryURL": "https://github.com/vapor/redis.git",
+        "state": {
+          "branch": null,
+          "revision": "b6c0c98d2219f550ccf23c4bb8f8b14d75356bc6",
+          "version": "3.4.0"
         }
       },
       {
