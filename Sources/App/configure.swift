@@ -4,9 +4,17 @@ import Vapor
 
 /// Called before your application initializes.
 public func configure(_ config: inout Config, _ env: inout Environment, _ services: inout Services) throws {
-    // Register providers first
-    let provider = RedisProvider()
-    try services.register(provider)
+    /// redis connection config
+    try services.register(RedisProvider())
+
+    var redisConfig = RedisClientConfig()
+    redisConfig.hostname = Environment.get("REDIS_HOST") ?? "redis"
+    redisConfig.port = 6379
+    let redis = try RedisDatabase(config: redisConfig)
+    var databases = DatabasesConfig()
+    databases.add(database: redis, as: .redis)
+    
+    services.register(databases)
 
     // Register routes to the router
     let router = EngineRouter.default()
@@ -18,4 +26,5 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     // middlewares.use(FileMiddleware.self) // Serves files from `Public/` directory
     middlewares.use(ErrorMiddleware.self) // Catches errors and converts to HTTP response
     services.register(middlewares)
+    
 }

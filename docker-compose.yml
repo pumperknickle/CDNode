@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  cdnode:
+    build: .
+    ports:
+      - "4000:4000"
+    depends_on:
+      - redis
+    links:
+      - redis
+    restart: always
+  redis:
+    image: "redis:5"
+    container_name: cache
+    expose:
+      - 6379

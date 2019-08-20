@@ -4,7 +4,6 @@ import CryptoStarterPack
 public typealias Digest = UInt256
 public typealias HashDelegate = BaseCrypto
 
-/// Register your application's routes here.
 public func routes(_ router: Router) throws {
     router.put("put", String.parameter) { req -> Future<HTTPStatus> in
         guard let contentToSet = try? req.parameters.next(String.self).bools(),
