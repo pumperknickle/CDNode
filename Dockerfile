@@ -15,4 +15,4 @@ RUN swift package clean
 
 EXPOSE 4000
 
-CMD ["swift", "test"]
+CMD ["swift", "run"]

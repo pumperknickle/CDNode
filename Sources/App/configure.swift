@@ -26,5 +26,6 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     // middlewares.use(FileMiddleware.self) // Serves files from `Public/` directory
     middlewares.use(ErrorMiddleware.self) // Catches errors and converts to HTTP response
     services.register(middlewares)
-    
+    let serverConfiure = NIOServerConfig.default(hostname: "0.0.0.0", port: 4000)
+    services.register(serverConfiure)
 }
